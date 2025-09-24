@@ -34,15 +34,15 @@ FreeplayADK.initialize_observability()
 
 You can now use the ADK just as you normally would and you will see logs flowing to Freeplay in the Observability section.
 
-(SCREENSHOT HERE)
-
 ## Observability
 Freeplay's Observability gives you a clear view into how your agent is performing in production.
 You can dig into to individual agent traces to understand each step and diagnose issues. 
-(SCREENSHOT)
+
+<img src="https://228labs.com/freeplay-google-demo/images/trace_detail.png" width="600" alt="Trace detail">
 
 You can also use Freeplay's comprehensive filtering functionality to slice and dice the data across any segment of interest. 
-(SCREENSHOT)
+
+<img src="https://228labs.com/freeplay-google-demo/images/filter.png" width="600" alt="Filter">
 
 ## Prompt Management
 Freeplay offers [native prompt management](https://docs.freeplay.ai/docs/managing-prompts) which simplifies the process of version and testing different prompt versions.
@@ -51,7 +51,7 @@ To leverage Freeplay's prompt management capabilities alongside the Google ADK y
 The FreeplayLLMAgent extends the ADK's base LlmAgent class but instead of having to hard code the prompt you can version prompts in the Freeplay application. 
 First define a prompt in Freeplay by going to Prompts -> Create prompt template. 
 
-(SCREENSHOT HERE)
+<img src="https://228labs.com/freeplay-google-demo/images/filter.png" width="600" alt="Prompt">
 
 In code simply use the ```FreeplayLLMAgent```
 
@@ -74,6 +74,7 @@ When the ```social_product_researcher``` is invoked the prompt will be retrieved
 ## Evaluation
 [Freeplay](https://docs.freeplay.ai/docs/evaluations) enables you to define, version, and run evaluations right from the web application.
 You can define evaluations for any of your prompts or agents by going to Evaluations -> "New evaluation". 
-(SCREENSHOT)
+
+<img src="https://228labs.com/freeplay-google-demo/images/eval_create.png" width="600" alt="Creating a new evaluation in Freeplay">
 
 These evaluations can be run for both online monitoring and offline evaluation. 
