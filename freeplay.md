@@ -1,12 +1,12 @@
-# Agent Observability with Freeplay
+# Agent Observability & Evaluation with Freeplay
 
-[Freeplay](https://freeplay.ai/) is an end-to-end platform for building and optimizing AI agents. Manage prompts, run experiments & evals, monitor production, and review data—all in one enterprise-ready platform.
+[Freeplay](https://freeplay.ai/) provides an end-to-end workflow and tools for building and optimizing AI agents, and it plugs in cleanly to the Google ADK. With Freeplay your whole team can easily collaborate to iterate on agent instructions (prompts), experiment with different models and agent changes, run evals offline and online, monitor production, and review data by hand.
 
-Freeplay and Google ADK complement one another. The Google ADK gives you a powerful and expressive agent orchestration framework while Freeplay plugs in for observability, prompt management, evaluation and testing. 
+Freeplay and Google ADK complement one another. The Google ADK gives you a powerful and expressive agent orchestration framework while Freeplay plugs in for observability, prompt management, evaluation and testing. Once you integrate with Freeplay, you can update prompts and evals from the Freeplay UI or from code, so that anyone on your team can contribute.
 
-Below is a guide for getting started with Freeplay and ADK. You can also find a full sample agent repo [here](https://github.com/228Labs/freeplay-google-demo).
+Below is a guide for getting started with Freeplay and the ADK. You can also find a full sample agent repo [here](https://github.com/228Labs/freeplay-google-demo).
 
-## Basic Set up
+## Basic Setup
 **Create a Freeplay Account**
 
 Sign up for a free [Freeplay account](https://freeplay.ai/signup).
@@ -19,13 +19,13 @@ FREEPLAY_API_URL=
 
 ```
 
-**Integrate using the Freeplay ADK Library**
+**Integrate with the Freeplay ADK Library**
 
 Install the Freeplay ADK library
 
 ```pip install freeplay-python-adk```
 
-Freeplay will automatically capture OTel logs from your ADK application when initialize observability 
+Freeplay will automatically capture OTel logs from your ADK application when initialize observability. 
 
 ```
 from freeplay_python_adk.client import FreeplayADK
@@ -35,7 +35,7 @@ FreeplayADK.initialize_observability()
 You can now use the ADK just as you normally would and you will see logs flowing to Freeplay in the Observability section.
 
 ## Observability
-Freeplay's Observability gives you a clear view into how your agent is performing in production.
+Freeplay's Observability gives you a clear view into how your agent is behaving in production.
 You can dig into to individual agent traces to understand each step and diagnose issues. 
 
 <img src="https://228labs.com/freeplay-google-demo/images/trace_detail.png" width="600" alt="Trace detail">
@@ -45,10 +45,11 @@ You can also use Freeplay's comprehensive filtering functionality to slice and d
 <img src="https://228labs.com/freeplay-google-demo/images/filter.png" width="600" alt="Filter">
 
 ## Prompt Management
-Freeplay offers [native prompt management](https://docs.freeplay.ai/docs/managing-prompts) which simplifies the process of version and testing different prompt versions.
+Freeplay offers [native prompt management](https://docs.freeplay.ai/docs/managing-prompts), which simplifies the process of version and testing different prompt versions. You can experiment with changes to ADK agent instructions in the Freeplay UI, test different models, and push updates to your code.
 
 To leverage Freeplay's prompt management capabilities alongside the Google ADK you'll want to use Freeplay ADK agent wrapper.
-The FreeplayLLMAgent extends the ADK's base LlmAgent class but instead of having to hard code the prompt you can version prompts in the Freeplay application. 
+`FreeplayLLMAgent` extends the ADK's base LlmAgent class, so that instead of having to hard code your prompts as agent instructions, you can version prompts in the Freeplay application. 
+
 First define a prompt in Freeplay by going to Prompts -> Create prompt template. 
 
 <img src="https://228labs.com/freeplay-google-demo/images/filter.png" width="600" alt="Prompt">
@@ -72,9 +73,9 @@ root_agent = FreeplayLLMAgent(
 When the ```social_product_researcher``` is invoked the prompt will be retrieved from Freeplay and formatted with the proper input variables. 
 
 ## Evaluation
-[Freeplay](https://docs.freeplay.ai/docs/evaluations) enables you to define, version, and run evaluations right from the web application.
+[Freeplay](https://docs.freeplay.ai/docs/evaluations) enables you to define, version, and run evaluations right from the Freeplay web application.
 You can define evaluations for any of your prompts or agents by going to Evaluations -> "New evaluation". 
 
 <img src="https://228labs.com/freeplay-google-demo/images/eval_create.png" width="600" alt="Creating a new evaluation in Freeplay">
 
-These evaluations can be run for both online monitoring and offline evaluation. 
+These evaluations can be configured to run for both online monitoring and offline evaluation. Datasets for offline evaluation can be uploaded to Freeplay, or saved from log examples.
