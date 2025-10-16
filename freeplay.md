@@ -71,7 +71,7 @@ To leverage Freeplay's prompt management capabilities alongside the Google ADK y
 
 First define a prompt in Freeplay by going to Prompts -> Create prompt template. 
 
-<img src="https://228labs.com/freeplay-google-demo/images/filter.png" width="600" alt="Prompt">
+<img src="https://228labs.com/freeplay-google-demo/images/prompt.png" width="600" alt="Prompt">
 
 In code simply use the ```FreeplayLLMAgent```
 
