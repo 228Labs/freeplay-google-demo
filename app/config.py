@@ -42,4 +42,4 @@ class ResearchConfiguration:
 
 config = ResearchConfiguration()
 
-FreeplayADK.inititalize_observability()
+FreeplayADK.initialize_observability()
