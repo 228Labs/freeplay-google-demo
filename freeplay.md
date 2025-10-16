@@ -31,6 +31,23 @@ Freeplay will automatically capture OTel logs from your ADK application when ini
 from freeplay_python_adk.client import FreeplayADK
 FreeplayADK.initialize_observability()
 ```
+You'll also want to pass in the Freeplay plugin to your App in your init file
+```
+
+from app.agent import root_agent
+from freeplay_python_adk.freeplay_observability_plugin import FreeplayObservabilityPlugin
+from google.adk.runners import App
+
+app = App(
+    name="app",
+    root_agent=root_agent,
+    plugins=[FreeplayObservabilityPlugin()],
+)
+
+__all__ = ["app"]
+
+```
+
 
 You can now use the ADK just as you normally would and you will see logs flowing to Freeplay in the Observability section.
 
@@ -79,3 +96,16 @@ You can define evaluations for any of your prompts or agents by going to Evaluat
 <img src="https://228labs.com/freeplay-google-demo/images/eval_create.png" width="600" alt="Creating a new evaluation in Freeplay">
 
 These evaluations can be configured to run for both online monitoring and offline evaluation. Datasets for offline evaluation can be uploaded to Freeplay, or saved from log examples.
+
+## Dataset Management
+As you get data flowing into Freeplay you can use these logs to start building up [datasets](https://docs.freeplay.ai/docs/datasets) to test against on a repeated basis. 
+
+Use prod logs to create golden datasets or collections of failure cases that you can use to test against as you make changes.
+<img src="https://228labs.com/freeplay-google-demo/images/save_test_case.png" width="600" alt="Save test case">
+
+
+## Batch Testing
+As you iterate on your agent you can run tests at both the [prompt](https://docs.freeplay.ai/docs/component-level-test-runs) and [end-to-end](https://docs.freeplay.ai/docs/end-to-end-test-runs) agent level. 
+This allows you to compare multiple different models or prompt changes and quanitfy changes head to head across your full agent execution. 
+
+[Here](https://github.com/228Labs/freeplay-google-demo/blob/main/examples/example_test_run.py) is a code example for executing a batch test on Freeplay with the Google ADK. 

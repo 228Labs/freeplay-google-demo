@@ -1,3 +1,11 @@
 from app.agent import root_agent
+from freeplay_python_adk.freeplay_observability_plugin import FreeplayObservabilityPlugin
+from google.adk.runners import App
 
-__all__ = ["root_agent"]
+app = App(
+    name="app",
+    root_agent=root_agent,
+    plugins=[FreeplayObservabilityPlugin()],
+)
+
+__all__ = ["app"]

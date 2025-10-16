@@ -17,11 +17,14 @@ from app import root_agent
 
 logger = logging.getLogger(__name__)
 
+# Configure the details of the test
+freeplay_dataset_name = "research_agent_dataset"
+freeplay_project_id = "f4460790-5cbf-44d4-9036-a487eaa11360"
+
 freeplay = Freeplay(
     freeplay_api_key=os.environ["FREEPLAY_API_KEY"],
-    api_base=os.environ["FREEPLAY_API_URL"],
+    api_base="https://app.freeplay.ai/api",
 )
-freeplay_project_id = os.getenv("FREEPLAY_PROJECT_ID")
 
 
 async def run_step_async(runner: Runner, message: str, session_id: str) -> None:
@@ -71,7 +74,7 @@ async def run_test():
 
     test_run = freeplay.test_runs.create(
         project_id=freeplay_project_id,
-        testlist="research_questions",
+        testlist=freeplay_dataset_name,
     )
 
     for test_case in test_run.get_trace_test_cases():
