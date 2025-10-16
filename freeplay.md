@@ -4,6 +4,8 @@
 
 Freeplay and Google ADK complement one another. The Google ADK gives you a powerful and expressive agent orchestration framework while Freeplay plugs in for observability, prompt management, evaluation and testing. Once you integrate with Freeplay, you can update prompts and evals from the Freeplay UI or from code, so that anyone on your team can contribute.
 
+[Click here](https://www.loom.com/share/82f41ffde94949beb941cb191f53c3ec?sid=997aff3c-daa3-40ab-93a9-fdaf87ea2ea1) for a full demo video!
+
 Below is a guide for getting started with Freeplay and the ADK. You can also find a full sample agent repo [here](https://github.com/228Labs/freeplay-google-demo).
 
 ## Basic Setup
