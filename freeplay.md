@@ -84,7 +84,28 @@ First define a prompt in Freeplay by going to Prompts -> Create prompt template.
 
 <img src="https://228labs.com/freeplay-google-demo/images/prompt.png" width="600" alt="Prompt">
 
-In code simply use the ```FreeplayLLMAgent```
+When creating your prompt template you'll want to add 3 elements
+
+**System Message**
+
+This corresponds to the "instructions" section in your code
+
+**Agent Context Variable**
+
+Adding the 
+```
+{{agent_context}}
+```
+add the bottom of your system message will create a place for the ongoing agent context to be passed through.
+
+**History Block**
+
+Click new message and change the role to 'history'. This will ensure the past messages are passed through when present. 
+
+<img src="https://228labs.com/freeplay-google-demo/images/prompt_editor.png" width="600" alt="Promp Editor">
+
+
+Now in code simply use the ```FreeplayLLMAgent```
 
 ```
 from freeplay_python_adk.client import FreeplayADK
