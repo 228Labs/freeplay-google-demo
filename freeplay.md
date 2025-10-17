@@ -1,12 +1,23 @@
 # Agent Observability & Evaluation with Freeplay
 
-[Freeplay](https://freeplay.ai/) provides an end-to-end workflow and tools for building and optimizing AI agents, and it plugs in cleanly to the Google ADK. With Freeplay your whole team can easily collaborate to iterate on agent instructions (prompts), experiment with different models and agent changes, run evals offline and online, monitor production, and review data by hand.
+[Freeplay](https://freeplay.ai/) provides an end-to-end workflow for building and optimizing AI agents. With Freeplay your whole team can easily collaborate to iterate on agent instructions (prompts), experiment with different models and agent changes, run evals both offline and online, monitor production, and review data by hand. It plugs in cleanly to the Google ADK. 
 
+Key benefits of Freeplay:
+
+* *Simple observability* focused on agents, LLM calls and tool calls for easy human review
+* *Online evals/automated scorers* for error detection in production
+* *Offline evals and experiment comparison* to test changes before deploying
+* *Prompt management* that supports pushing changes straight from the Freeplay playground to code
+* *Human review workflows* for collaboration on error analysis and data annotation
+* *Powerful UI* that makes it possible for domain experts to collaborate closely with engineers
+  
 Freeplay and Google ADK complement one another. The Google ADK gives you a powerful and expressive agent orchestration framework while Freeplay plugs in for observability, prompt management, evaluation and testing. Once you integrate with Freeplay, you can update prompts and evals from the Freeplay UI or from code, so that anyone on your team can contribute.
 
-[Click here](https://www.loom.com/share/82f41ffde94949beb941cb191f53c3ec?sid=997aff3c-daa3-40ab-93a9-fdaf87ea2ea1) for a full demo video!
+[Click here](https://www.loom.com/share/82f41ffde94949beb941cb191f53c3ec?sid=997aff3c-daa3-40ab-93a9-fdaf87ea2ea1) to see a demo.
 
-Below is a guide for getting started with Freeplay and the ADK. You can also find a full sample agent repo [here](https://github.com/228Labs/freeplay-google-demo).
+# Getting Started
+
+Below is a guide for getting started with Freeplay and the ADK. You can also find a full sample ADK agent repo [here](https://github.com/228Labs/freeplay-google-demo).
 
 ## Basic Setup
 **Create a Freeplay Account**
