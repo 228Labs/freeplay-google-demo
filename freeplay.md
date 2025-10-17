@@ -4,12 +4,12 @@
 
 Key benefits of Freeplay:
 
-* **Simple observability** focused on agents, LLM calls and tool calls for easy human review
-* **Online evals/automated scorers** for error detection in production
-* **Offline evals and experiment comparison** to test changes before deploying
-* **Prompt management** that supports pushing changes straight from the Freeplay playground to code
-* **Human review workflow** for collaboration on error analysis and data annotation
-* **Powerful UI** that makes it possible for domain experts to collaborate closely with engineers
+* **Simple observability** - focused on agents, LLM calls and tool calls for easy human review
+* **Online evals/automated scorers** - for error detection in production
+* **Offline evals and experiment comparison** - to test changes before deploying
+* **Prompt management** - supports pushing changes straight from the Freeplay playground to code
+* **Human review workflow** - for collaboration on error analysis and data annotation
+* **Powerful UI** - makes it possible for domain experts to collaborate closely with engineers
   
 Freeplay and Google ADK complement one another. The Google ADK gives you a powerful and expressive agent orchestration framework while Freeplay plugs in for observability, prompt management, evaluation and testing. Once you integrate with Freeplay, you can update prompts and evals from the Freeplay UI or from code, so that anyone on your team can contribute.
 
