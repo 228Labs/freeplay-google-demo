@@ -1,15 +1,15 @@
 # Agent Observability & Evaluation with Freeplay
 
-[Freeplay](https://freeplay.ai/) provides an end-to-end workflow for building and optimizing AI agents. With Freeplay your whole team can easily collaborate to iterate on agent instructions (prompts), experiment with different models and agent changes, run evals both offline and online, monitor production, and review data by hand. It plugs in cleanly to the Google ADK. 
+[Freeplay](https://freeplay.ai/) provides an end-to-end workflow for building and optimizing AI agents. With Freeplay your whole team can easily collaborate to iterate on agent instructions (prompts), experiment with and compare different models and agent changes, run evals both offline and online to measure quality, monitor production, and review data by hand. It plugs in cleanly to the Google ADK. 
 
 Key benefits of Freeplay:
 
-* *Simple observability* focused on agents, LLM calls and tool calls for easy human review
-* *Online evals/automated scorers* for error detection in production
-* *Offline evals and experiment comparison* to test changes before deploying
-* *Prompt management* that supports pushing changes straight from the Freeplay playground to code
-* *Human review workflows* for collaboration on error analysis and data annotation
-* *Powerful UI* that makes it possible for domain experts to collaborate closely with engineers
+* **Simple observability** focused on agents, LLM calls and tool calls for easy human review
+* **Online evals/automated scorers** for error detection in production
+* **Offline evals and experiment comparison** to test changes before deploying
+* **Prompt management** that supports pushing changes straight from the Freeplay playground to code
+* **Human review workflow** for collaboration on error analysis and data annotation
+* **Powerful UI** that makes it possible for domain experts to collaborate closely with engineers
   
 Freeplay and Google ADK complement one another. The Google ADK gives you a powerful and expressive agent orchestration framework while Freeplay plugs in for observability, prompt management, evaluation and testing. Once you integrate with Freeplay, you can update prompts and evals from the Freeplay UI or from code, so that anyone on your team can contribute.
 
@@ -44,7 +44,7 @@ Freeplay will automatically capture OTel logs from your ADK application when ini
 from freeplay_python_adk.client import FreeplayADK
 FreeplayADK.initialize_observability()
 ```
-You'll also want to pass in the Freeplay plugin to your App in your init file
+You'll also want to pass in the Freeplay plugin to your App in your init file.
 ```
 
 from app.agent import root_agent
@@ -62,22 +62,22 @@ __all__ = ["app"]
 ```
 
 
-You can now use the ADK just as you normally would and you will see logs flowing to Freeplay in the Observability section.
+You can now use the ADK just as you normally would, and you will see logs flowing to Freeplay in the Observability section.
 
 ## Observability
-Freeplay's Observability gives you a clear view into how your agent is behaving in production.
+Freeplay's Observability feature gives you a clear view into how your agent is behaving in production.
 You can dig into to individual agent traces to understand each step and diagnose issues. 
 
 <img src="https://228labs.com/freeplay-google-demo/images/trace_detail.png" width="600" alt="Trace detail">
 
-You can also use Freeplay's comprehensive filtering functionality to slice and dice the data across any segment of interest. 
+You can also use Freeplay's comprehensive filtering functionality to search and filter the data across any segment of interest. 
 
 <img src="https://228labs.com/freeplay-google-demo/images/filter.png" width="600" alt="Filter">
 
-## Prompt Management
-Freeplay offers [native prompt management](https://docs.freeplay.ai/docs/managing-prompts), which simplifies the process of version and testing different prompt versions. You can experiment with changes to ADK agent instructions in the Freeplay UI, test different models, and push updates to your code.
+## Prompt Management (optional)
+Freeplay offers [native prompt management](https://docs.freeplay.ai/docs/managing-prompts), which simplifies the process of version and testing different prompt versions. It allows you to experiment with changes to ADK agent instructions in the Freeplay UI, test different models, and push updates straight to your code, similar to a feature flag.
 
-To leverage Freeplay's prompt management capabilities alongside the Google ADK you'll want to use Freeplay ADK agent wrapper.
+To leverage Freeplay's prompt management capabilities alongside the Google ADK, you'll want to use Freeplay ADK agent wrapper.
 `FreeplayLLMAgent` extends the ADK's base LlmAgent class, so that instead of having to hard code your prompts as agent instructions, you can version prompts in the Freeplay application. 
 
 First define a prompt in Freeplay by going to Prompts -> Create prompt template. 
@@ -118,7 +118,7 @@ Use prod logs to create golden datasets or collections of failure cases that you
 
 
 ## Batch Testing
-As you iterate on your agent you can run tests at both the [prompt](https://docs.freeplay.ai/docs/component-level-test-runs) and [end-to-end](https://docs.freeplay.ai/docs/end-to-end-test-runs) agent level. 
+As you iterate on your agent you can run batch tests (aka offline experiments) at both the [prompt](https://docs.freeplay.ai/docs/component-level-test-runs) and [end-to-end](https://docs.freeplay.ai/docs/end-to-end-test-runs) agent level. 
 This allows you to compare multiple different models or prompt changes and quanitfy changes head to head across your full agent execution. 
 
 [Here](https://github.com/228Labs/freeplay-google-demo/blob/main/examples/example_test_run.py) is a code example for executing a batch test on Freeplay with the Google ADK. 
